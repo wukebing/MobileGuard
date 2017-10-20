@@ -13,7 +13,8 @@ import cn.edu.gdmec.android.mobileguard1.R;
 
 /**
  * Created by lenovo on 2017/10/15.
- *   恭喜页面
+ *
+ *  恭喜页面
  */
 
 public abstract class BaseSetUpActivity extends AppCompatActivity {
