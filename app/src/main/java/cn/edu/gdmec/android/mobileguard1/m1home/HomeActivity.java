@@ -19,6 +19,7 @@ import java.security.NoSuchAlgorithmException;
 
 import cn.edu.gdmec.android.mobileguard1.R;
 import cn.edu.gdmec.android.mobileguard1.m1home.adapter.HomeAdapter;
+import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.MD5Utils;
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.dialog.SetUpPasswordDialog;
@@ -107,6 +108,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText ( HomeActivity.this, "密码不能为空！",Toast.LENGTH_LONG).show ();
                 }else if (password.equals ( MD5Utils.encode ( mInPswdDialog.getPassword () ) )){
                     mInPswdDialog.dismiss ();
+                    startActivity(LostFindActivity.class);
                     Toast.makeText ( HomeActivity.this, "可以进入手机防盗模块",Toast.LENGTH_LONG ).show ();
                 }else {
                     mInPswdDialog.dismiss ();
