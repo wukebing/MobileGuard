@@ -13,8 +13,8 @@ import cn.edu.gdmec.android.mobileguard1.R;
 
 /**
  * Created by lenovo on 2017/10/15.
- *恭喜
  *
+ *恭喜
  */
 
 public abstract class BaseSetUpActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public abstract class BaseSetUpActivity extends AppCompatActivity {
     private GestureDetector mGestureDetector;
     public abstract void showNext();
     public abstract void showPre();
-
+//
     @Override
     public boolean onTouchEvent(MotionEvent event){
         mGestureDetector.onTouchEvent(event );
