@@ -22,7 +22,7 @@ public abstract class BaseSetUpActivity extends AppCompatActivity {
     private GestureDetector mGestureDetector;
     public abstract void showNext();
     public abstract void showPre();
-//10.20终于没报错了
+//终于没报错了
     @Override
     public boolean onTouchEvent(MotionEvent event){
         mGestureDetector.onTouchEvent(event );
