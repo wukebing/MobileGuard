@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.dialog;
+package cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog;
 
 import android.app.Dialog;
 import android.content.Context;

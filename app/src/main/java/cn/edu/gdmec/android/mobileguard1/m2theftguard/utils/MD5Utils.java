@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils;
+package cn.edu.gdmec.android.mobileguard1.m2theftguard.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

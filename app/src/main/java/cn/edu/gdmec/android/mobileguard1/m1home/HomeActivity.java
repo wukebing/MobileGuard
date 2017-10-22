@@ -3,26 +3,20 @@ package cn.edu.gdmec.android.mobileguard1.m1home;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import java.security.NoSuchAlgorithmException;
-
 import cn.edu.gdmec.android.mobileguard1.R;
 import cn.edu.gdmec.android.mobileguard1.m1home.adapter.HomeAdapter;
-import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.LostFindActivity;
-import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.MD5Utils;
-import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.dialog.InterPasswordDialog;
-import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.utils.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.android.mobileguard1.m2theftguard.LostFindActivity;
+import cn.edu.gdmec.android.mobileguard1.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.InterPasswordDialog;
+import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.SetUpPasswordDialog;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
