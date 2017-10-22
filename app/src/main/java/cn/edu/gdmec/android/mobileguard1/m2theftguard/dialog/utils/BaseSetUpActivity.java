@@ -13,17 +13,13 @@ import cn.edu.gdmec.android.mobileguard1.R;
 
 /**
  * Created by lenovo on 2017/10/15.
- *
- *10.22
- *
- */
+ **/
 
 public abstract class BaseSetUpActivity extends AppCompatActivity {
     public SharedPreferences sp;
     private GestureDetector mGestureDetector;
     public abstract void showNext();
     public abstract void showPre();
-//终于没报错了
     @Override
     public boolean onTouchEvent(MotionEvent event){
         mGestureDetector.onTouchEvent(event );
