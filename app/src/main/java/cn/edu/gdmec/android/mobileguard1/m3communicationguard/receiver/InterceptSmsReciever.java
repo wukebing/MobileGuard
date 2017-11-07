@@ -26,6 +26,7 @@ public class InterceptSmsReciever extends BroadcastReceiver{
         for (Object obj : objs){
             SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) obj);
             String sender = smsMessage.getMessageBody();
+            String body =  smsMessage.getMessageBody();
             if(sender.startsWith("+86")){
                 sender = sender.substring(3,sender.length());
             }

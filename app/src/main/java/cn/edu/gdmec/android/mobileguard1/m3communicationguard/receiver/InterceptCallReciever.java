@@ -11,8 +11,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.RemoteException;
-import android.telecom.TelecomManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -76,7 +74,7 @@ public class InterceptCallReciever extends BroadcastReceiver {
             super.onChange(selfChange);
         }
 
-
+    }
         public void deleteCallLog(String incomingNumber, Context context) {
             ContentResolver resolver=context.getContentResolver();
             Uri uri=Uri.parse("content://call_log/calls");
@@ -88,7 +86,7 @@ public class InterceptCallReciever extends BroadcastReceiver {
             }
         }
 
-    }
+
     private void endCall(Context context) {
         try {
             Class clazz=context.getClassLoader().loadClass("android.os.ServiceManager");
