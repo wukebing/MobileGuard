@@ -20,6 +20,7 @@ import cn.edu.gdmec.android.mobileguard1.m2theftguard.receiver.MyDeviceAdminRece
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard1.m2theftguard.dialog.SetUpPasswordDialog;
+import cn.edu.gdmec.android.mobileguard1.m3communicationguard.SecurityPhoneActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
@@ -46,6 +47,9 @@ public class HomeActivity extends AppCompatActivity {
                         }else {
                             showSetUpPswdDialog();
                         }
+                        break;
+                    case 1:
+                        startActivity(SecurityPhoneActivity.class);
                         break;
                 }
             }
@@ -123,8 +127,9 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText ( HomeActivity.this, "密码有误，请重新输入",Toast.LENGTH_LONG).show ();
                 }
             }
+
             @Override
-            public void cancel(){
+            public void cancel() {
                 mInPswdDialog.dismiss ();
             }
 
@@ -132,6 +137,8 @@ public class HomeActivity extends AppCompatActivity {
             public void cancle() {
 
             }
+
+
         });
         mInPswdDialog.setCancelable ( true );
         mInPswdDialog.show ();

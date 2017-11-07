@@ -85,7 +85,7 @@ public class BlackContactAdapter extends BaseAdapter{
                     contactInfos.remove(contactInfos.get(i));
                     BlackContactAdapter.this.notifyDataSetChanged();
                     if(dao.getTotalNumber() == 0){
-                        callBack.DataSizeChanged();
+                       // callBack.DataSizeChanged();
                         callBack.DataSizeChanged();
                     }
                 }else {

@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.mobileguard1.m3communicationguard;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AbsListView;
@@ -30,7 +31,9 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
     private BlackNumberDao dao;
     private ListView mListView;
     private int pagenumber= 0 ;
-    private int pagesize = 4;
+    //private int pagesize = 4;
+    //补坑
+    private int pagesize = 15;
     private int totalNumber;
     private List<BlackContactInfo> pageBlackNumber = new ArrayList<BlackContactInfo>();
     private BlackContactAdapter adapter;
@@ -99,6 +102,15 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
         });
     }
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate ( savedInstanceState );
+        getSupportActionBar ().hide ();//去掉标题栏
+        setContentView ( R.layout.activity_security_phone );
+        initView ();
+        fillData ();
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.imgv_leftbtn:
@@ -112,18 +124,21 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onResume(){
         super.onResume();
-        if(dao.getTotalNumber() > 0){
-            mHaveBlackNumber.setVisibility(View.VISIBLE);
-            mNoBlackNumber.setVisibility(View.GONE);
-        }else {
-            mHaveBlackNumber.setVisibility(View.VISIBLE);
-            mNoBlackNumber.setVisibility(View.GONE);
-        }
-        pagenumber = 0 ;
-        pageBlackNumber.clear();
-        pageBlackNumber.addAll(dao.getPageBlackNumber(pagenumber,pagesize));
-        if(adapter != null){
-            adapter.notifyDataSetChanged();
+        //补坑
+        if(totalNumber != dao.getTotalNumber()){
+            if(dao.getTotalNumber() > 0){
+                mHaveBlackNumber.setVisibility(View.VISIBLE);
+                mNoBlackNumber.setVisibility(View.GONE);
+            }else {
+                mHaveBlackNumber.setVisibility(View.VISIBLE);
+                mNoBlackNumber.setVisibility(View.GONE);
+            }
+            pagenumber = 0 ;
+            pageBlackNumber.clear();
+            pageBlackNumber.addAll(dao.getPageBlackNumber(pagenumber,pagesize));
+            if(adapter != null) {
+                adapter.notifyDataSetChanged();
+            }
         }
     }
 }

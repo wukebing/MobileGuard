@@ -19,7 +19,6 @@ import cn.edu.gdmec.android.mobileguard1.m3communicationguard.entity.BlackContac
 
 public class BlackNumberDao {
     private BlackNumberOpenHelper blackNumberOpenHelper;
-
     public BlackNumberDao(Context context){
         super();
         blackNumberOpenHelper = new BlackNumberOpenHelper(context,"blackNumber.db",null,1);
@@ -87,7 +86,7 @@ public class BlackNumberDao {
     public int getBlackContactMode(String number){
         Log.d("incoming phonenumber",number);
         SQLiteDatabase db = blackNumberOpenHelper.getReadableDatabase();
-        Cursor cursor = db.query("blacknumbe",new String[] { "mode"},"number=?",
+        Cursor cursor = db.query("blacknumber",new String[] { "mode"},"number=?",
                 new String[] { number },null, null,null);
         int mode = 0;
         if(cursor.moveToNext()){
